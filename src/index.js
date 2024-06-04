@@ -5,7 +5,6 @@ import Player from "./player";
 const randomize = document.querySelector(".randomize");
 const rotateBtn = document.querySelector(".rotateBtn");
 const clearBtn = document.querySelector(".clearBtn");
-const clearBoard = document.querySelector(".clearBoard");
 const ships = document.querySelector(".ships");
 
 rotateBtn.style.display = "none";
@@ -31,7 +30,7 @@ function clearAfterPlace() {
     startGame.textContent = "Start Game";
     clearBtn.appendChild(startGame);
     startGame.addEventListener("click", () => {
-        playRound(board1, board2, b1, b2, "player");
+        playRound(boardOne, boardTwo, b1, b2, "player");
         clearBtn.style.display = "none";
         rotateBtn.style.display = "none";
         randomize.style.display = "none";
@@ -103,7 +102,7 @@ function playRound(boardOne, boardTwo, b1, b2, currentPlayer) {
             if (!boardOne.endgame && !boardTwo.endgame) {
                 boardTwo.clicked = false;
                 currentPlayer = "computer";
-                playRound(boardOne, boardTwo, b1, b2, currentPlayer, currentBoard);
+                playRound(boardOne, boardTwo, b1, b2, currentPlayer);
             }
         } 
     } else {

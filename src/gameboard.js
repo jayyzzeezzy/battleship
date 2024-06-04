@@ -1,14 +1,5 @@
 import {
-    playRound, 
-    b1,
-    b2,
-    boardOne,
-    boardTwo,
-    currentPlayer,
-    dgDrop,
-    dgOver,
-    madeMove,
-    playerMadeAMove,
+    playerMadeAMove
 } from "./index";
 
 class Gameboard {
@@ -60,7 +51,7 @@ class Gameboard {
                     this.shipPlaced = false;
                     return "can't place ship here";
                 }
-            } else if (position == "horizontal") {
+            } else if (position == "vertical") {
                 let size = x + ship.length - 1;
                 if (size < 10) {
                     for (let i = 0; i < ship.length; i++) {
